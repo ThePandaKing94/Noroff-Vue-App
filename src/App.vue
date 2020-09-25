@@ -1,7 +1,14 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div class="[ row ]">
+    <div class=" [col-sm-12] "></div>
+    <div class=" [col-sm-12] ">
+       <div>
+         <h3>{{message}}</h3>
+       </div>
+       <form>
+         
+       </form>
+    </div>
   </div>
 </template>
 
@@ -12,8 +19,23 @@ export default {
   name: 'App',
   components: {
     HelloWorld
-  }
+  },
+
+    mounted: function() {
+    fetch("http://www.recipepuppy.com/api/", {
+      method: 'get'
+    })
+      .then((response) => {
+        return response.json()
+      })
+      .then((jsonData) => {
+
+      })
+  },
+    
 }
+
+
 </script>
 
 <style>
